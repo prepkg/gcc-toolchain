@@ -34,6 +34,23 @@ compatibility and preventing errors like:
 | Binutils   | 2.29.1   |
 | GDB        | 16.3     |
 
+## Precompiled Toolchains
+
+If you prefer not to build the toolchain yourself, a precompiled GCC toolchain for each supported architecture can be
+downloaded from the [releases page](https://github.com/prepkg/gcc-toolchain/releases).
+
+* x86_64-linux-gnu:
+
+```shell
+curl -sSLo gcc-x86_64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-x86_64-linux-gnu.tar.gz
+```
+
+* aarch64-linux-gnu:
+
+```shell
+curl -sSLo gcc-aarch64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-aarch64-linux-gnu.tar.gz
+```
+
 ## Compilation
 
 * Clone the repository:

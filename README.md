@@ -1,7 +1,8 @@
 # GCC Toolchain
 
 GCC toolchain targeting **older glibc versions**, designed for building Linux binaries that run across a wide range of
-distributions. This toolchain is intended for use inside a Docker container running **Ubuntu 24.04 or later**.
+distributions. Intended for use inside a Docker container running **Ubuntu 24.04 or later**. This toolchain is built
+using [Crosstool-NG](https://github.com/crosstool-ng/crosstool-ng).
 
 ## Why?
 

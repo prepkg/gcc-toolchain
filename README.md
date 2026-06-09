@@ -19,21 +19,21 @@ compatibility and preventing errors like:
 
 * x86_64-linux-gnu:
 
-| Component  | Version  |
-|:-----------|:---------|
-| GCC        | 15.2.0   |
-| glibc      | 2.17     |
-| Binutils   | 2.45     |
-| GDB        | 16.3     |
+| Component  | Version |
+|:-----------|:--------|
+| GCC        | 16.1.0  |
+| glibc      | 2.17    |
+| Binutils   | 2.46    |
+| GDB        | 17.2    |
 
 * aarch64-linux-gnu:
 
-| Component  | Version  |
-|:-----------|:---------|
-| GCC        | 15.2.0   |
-| glibc      | 2.17     |
-| Binutils   | 2.29.1   |
-| GDB        | 16.3     |
+| Component  | Version |
+|:-----------|:--------|
+| GCC        | 16.1.0  |
+| glibc      | 2.26    |
+| Binutils   | 2.46    |
+| GDB        | 17.2    |
 
 ## Precompiled Toolchains
 

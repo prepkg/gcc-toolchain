@@ -35,6 +35,15 @@ compatibility and preventing errors like:
 | Binutils   | 2.46    |
 | GDB        | 17.2    |
 
+* riscv64-linux-gnu:
+
+| Component  | Version |
+|:-----------|:--------|
+| GCC        | 16.1.0  |
+| glibc      | 2.30    |
+| Binutils   | 2.46    |
+| GDB        | 17.2    |
+
 ## Precompiled Toolchains
 
 If you prefer not to build the toolchain yourself, a precompiled GCC toolchain for each supported architecture can be
@@ -50,6 +59,12 @@ curl -sSLo gcc-x86_64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/r
 
 ```shell
 curl -sSLo gcc-aarch64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-aarch64-linux-gnu.tar.gz
+```
+
+* riscv64-linux-gnu:
+
+```shell
+curl -sSLo gcc-riscv64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-riscv64-linux-gnu.tar.gz
 ```
 
 ## Compilation

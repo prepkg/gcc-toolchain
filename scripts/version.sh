@@ -5,13 +5,15 @@ cd build
 TOOLCHAINS=(
   'x86_64-linux-gnu'
   'aarch64-linux-gnu'
+  'riscv64-linux-gnu'
 )
 
 for toolchain in "${TOOLCHAINS[@]}"; do
   tar xf gcc-$toolchain.tar.gz
 
-  GCC_VERSION=$($toolchain/bin/$toolchain-gcc -dumpversion)
-  GLIBC_VERSION=$(strings $toolchain/$toolchain/sysroot/lib/libc.so.6 | grep GLIBC | sed 's/.*GLIBC_\([.0-9]*\).*/\1/g' | sort -Vu | tail -n1)
+  GCC=$toolchain/bin/$toolchain-gcc
+  GCC_VERSION=$($GCC -dumpversion)
+  GLIBC_VERSION=$(strings $($GCC -print-file-name=libc.so.6) | grep GLIBC | sed 's/.*GLIBC_\([.0-9]*\).*/\1/g' | sort -Vu | tail -n1)
   BINUTILS_VERSION=$($toolchain/bin/$toolchain-ld --version | head -n1 | grep -Po '[0-9.]+$')
   GDB_VERSION=$($toolchain/bin/$toolchain-gdb --version | head -n1 | grep -Po '[0-9.]+$')
 

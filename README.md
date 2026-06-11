@@ -35,6 +35,15 @@ compatibility and preventing errors like:
 | Binutils   | 2.46    |
 | GDB        | 17.2    |
 
+* arm-linux-gnueabi:
+
+| Component  | Version |
+|:-----------|:--------|
+| GCC        | 16.1.0  |
+| glibc      | 2.26    |
+| Binutils   | 2.46    |
+| GDB        | 17.2    |
+
 * riscv64-linux-gnu:
 
 | Component  | Version |
@@ -59,6 +68,12 @@ curl -sSLo gcc-x86_64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/r
 
 ```shell
 curl -sSLo gcc-aarch64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-aarch64-linux-gnu.tar.gz
+```
+
+* arm-linux-gnueabi:
+
+```shell
+curl -sSLo gcc-arm-linux-gnueabi.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-arm-linux-gnueabi.tar.gz
 ```
 
 * riscv64-linux-gnu:

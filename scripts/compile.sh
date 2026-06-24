@@ -3,7 +3,7 @@
 cd /tmp
 git clone https://github.com/crosstool-ng/crosstool-ng
 cd crosstool-ng
-git checkout 1193ab8
+git checkout 203a48c
 
 ./bootstrap
 ./configure --enable-local

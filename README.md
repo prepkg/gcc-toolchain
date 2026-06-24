@@ -19,39 +19,39 @@ compatibility and preventing errors like:
 
 * x86_64-linux-gnu:
 
-| Component  | Version |
-|:-----------|:--------|
-| GCC        | 16.1.0  |
-| glibc      | 2.17    |
-| Binutils   | 2.46    |
-| GDB        | 17.2    |
+| Component | Version |
+|:----------|:--------|
+| GCC       | 16.1.0  |
+| glibc     | 2.17    |
+| Binutils  | 2.46.1  |
+| GDB       | 17.2    |
 
 * aarch64-linux-gnu:
 
-| Component  | Version |
-|:-----------|:--------|
-| GCC        | 16.1.0  |
-| glibc      | 2.26    |
-| Binutils   | 2.46    |
-| GDB        | 17.2    |
+| Component | Version |
+|:----------|:--------|
+| GCC       | 16.1.0  |
+| glibc     | 2.26    |
+| Binutils  | 2.46.1  |
+| GDB       | 17.2    |
 
 * arm-linux-gnueabi:
 
-| Component  | Version |
-|:-----------|:--------|
-| GCC        | 16.1.0  |
-| glibc      | 2.26    |
-| Binutils   | 2.46    |
-| GDB        | 17.2    |
+| Component | Version |
+|:----------|:--------|
+| GCC       | 16.1.0  |
+| glibc     | 2.26    |
+| Binutils  | 2.46.1  |
+| GDB       | 17.2    |
 
 * riscv64-linux-gnu:
 
-| Component  | Version |
-|:-----------|:--------|
-| GCC        | 16.1.0  |
-| glibc      | 2.30    |
-| Binutils   | 2.46    |
-| GDB        | 17.2    |
+| Component | Version |
+|:----------|:--------|
+| GCC       | 16.1.0  |
+| glibc     | 2.30    |
+| Binutils  | 2.46.1  |
+| GDB       | 17.2    |
 
 ## Precompiled Toolchains
 

@@ -26,12 +26,30 @@ compatibility and preventing errors like:
 | Binutils  | 2.46.1  |
 | GDB       | 17.2    |
 
+* x86_64-linux-musl:
+
+| Component | Version |
+|:----------|:--------|
+| GCC       | 16.1.0  |
+| musl      | 1.2.6   |
+| Binutils  | 2.46.1  |
+| GDB       | 17.2    |
+
 * aarch64-linux-gnu:
 
 | Component | Version |
 |:----------|:--------|
 | GCC       | 16.1.0  |
 | glibc     | 2.26    |
+| Binutils  | 2.46.1  |
+| GDB       | 17.2    |
+
+* aarch64-linux-musl:
+
+| Component | Version |
+|:----------|:--------|
+| GCC       | 16.1.0  |
+| musl      | 1.2.6   |
 | Binutils  | 2.46.1  |
 | GDB       | 17.2    |
 
@@ -64,10 +82,22 @@ downloaded from the [releases page](https://github.com/prepkg/gcc-toolchain/rele
 curl -sSLo gcc-x86_64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-x86_64-linux-gnu.tar.gz
 ```
 
+* x86_64-linux-musl:
+
+```shell
+curl -sSLo gcc-x86_64-linux-musl.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-x86_64-linux-musl.tar.gz
+```
+
 * aarch64-linux-gnu:
 
 ```shell
 curl -sSLo gcc-aarch64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-aarch64-linux-gnu.tar.gz
+```
+
+* aarch64-linux-musl:
+
+```shell
+curl -sSLo gcc-aarch64-linux-musl.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-aarch64-linux-musl.tar.gz
 ```
 
 * arm-linux-gnueabi:

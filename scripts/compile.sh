@@ -13,7 +13,9 @@ mkdir -p /app/build
 
 TOOLCHAINS=(
   'x86_64-linux-gnu'
+  'x86_64-linux-musl'
   'aarch64-linux-gnu'
+  'aarch64-linux-musl'
   'arm-linux-gnueabi'
   'riscv64-linux-gnu'
 )

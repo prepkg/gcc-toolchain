@@ -1,115 +1,52 @@
 # GCC Toolchain
 
-GCC toolchain targeting **older glibc versions**, designed for building Linux binaries that run across a wide range of
-distributions. Intended for use inside a Docker container running **Ubuntu 26.04 or later**. This toolchain is built
-using [Crosstool-NG](https://github.com/crosstool-ng/crosstool-ng).
+GCC toolchain targeting **older glibc versions** and **musl**, designed for building Linux binaries that run across a
+wide range of distributions. Intended for use inside a Docker container running **Ubuntu 26.04 or later**. This
+toolchain is built using [Crosstool-NG](https://github.com/crosstool-ng/crosstool-ng).
+
+To get started, [download a precompiled toolchain](#precompiled-toolchains) or [build from source](#compilation).
 
 ## Why?
 
 The usual method for producing portable Linux binaries is to compile them on an outdated distribution (e.g., CentOS 7).
 
-This repository provides a **modern alternative**: a GCC toolchain configured to target an older glibc, ensuring
-compatibility and preventing errors like:
+This repository provides a **modern alternative**:
+
+* **glibc targets** - a GCC toolchain configured to target an older glibc, ensuring compatibility and preventing errors like:
 
 ```text
 /lib64/libc.so.6: version `GLIBC_2.XX' not found
 ```
 
+* **musl targets** - produce fully static binaries with no dynamic library dependencies, maximizing portability.
+
 ## Supported Toolchains
 
-* x86_64-linux-gnu:
-
-| Component | Version |
-|:----------|:--------|
-| GCC       | 16.1.0  |
-| glibc     | 2.17    |
-| Binutils  | 2.46.1  |
-| GDB       | 17.2    |
-
-* x86_64-linux-musl:
-
-| Component | Version |
-|:----------|:--------|
-| GCC       | 16.1.0  |
-| musl      | 1.2.6   |
-| Binutils  | 2.46.1  |
-| GDB       | 17.2    |
-
-* aarch64-linux-gnu:
-
-| Component | Version |
-|:----------|:--------|
-| GCC       | 16.1.0  |
-| glibc     | 2.26    |
-| Binutils  | 2.46.1  |
-| GDB       | 17.2    |
-
-* aarch64-linux-musl:
-
-| Component | Version |
-|:----------|:--------|
-| GCC       | 16.1.0  |
-| musl      | 1.2.6   |
-| Binutils  | 2.46.1  |
-| GDB       | 17.2    |
-
-* arm-linux-gnueabi:
-
-| Component | Version |
-|:----------|:--------|
-| GCC       | 16.1.0  |
-| glibc     | 2.26    |
-| Binutils  | 2.46.1  |
-| GDB       | 17.2    |
-
-* riscv64-linux-gnu:
-
-| Component | Version |
-|:----------|:--------|
-| GCC       | 16.1.0  |
-| glibc     | 2.30    |
-| Binutils  | 2.46.1  |
-| GDB       | 17.2    |
+| Target             | GCC    | C Library  | Binutils | GDB  |
+|:-------------------|:-------|:-----------|:---------|:-----|
+| x86_64-linux-gnu   | 16.1.0 | glibc 2.17 | 2.46.1   | 17.2 |
+| x86_64-linux-musl  | 16.1.0 | musl 1.2.6 | 2.46.1   | 17.2 |
+| aarch64-linux-gnu  | 16.1.0 | glibc 2.26 | 2.46.1   | 17.2 |
+| aarch64-linux-musl | 16.1.0 | musl 1.2.6 | 2.46.1   | 17.2 |
+| arm-linux-gnueabi  | 16.1.0 | glibc 2.26 | 2.46.1   | 17.2 |
+| riscv64-linux-gnu  | 16.1.0 | glibc 2.30 | 2.46.1   | 17.2 |
 
 ## Precompiled Toolchains
 
 If you prefer not to build the toolchain yourself, a precompiled GCC toolchain for each supported architecture can be
 downloaded from the [releases page](https://github.com/prepkg/gcc-toolchain/releases).
 
-* x86_64-linux-gnu:
+Replace `<target>` with one of: `x86_64-linux-gnu`, `x86_64-linux-musl`, `aarch64-linux-gnu`, `aarch64-linux-musl`,
+`arm-linux-gnueabi`, `riscv64-linux-gnu`.
+
+```shell
+curl -sSLo gcc-<target>.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-<target>.tar.gz
+```
+
+For example:
 
 ```shell
 curl -sSLo gcc-x86_64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-x86_64-linux-gnu.tar.gz
-```
-
-* x86_64-linux-musl:
-
-```shell
-curl -sSLo gcc-x86_64-linux-musl.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-x86_64-linux-musl.tar.gz
-```
-
-* aarch64-linux-gnu:
-
-```shell
-curl -sSLo gcc-aarch64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-aarch64-linux-gnu.tar.gz
-```
-
-* aarch64-linux-musl:
-
-```shell
-curl -sSLo gcc-aarch64-linux-musl.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-aarch64-linux-musl.tar.gz
-```
-
-* arm-linux-gnueabi:
-
-```shell
-curl -sSLo gcc-arm-linux-gnueabi.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-arm-linux-gnueabi.tar.gz
-```
-
-* riscv64-linux-gnu:
-
-```shell
-curl -sSLo gcc-riscv64-linux-gnu.tar.gz https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-riscv64-linux-gnu.tar.gz
 ```
 
 ## Compilation
@@ -126,16 +63,16 @@ git clone https://github.com/prepkg/gcc-toolchain.git && cd gcc-toolchain
 ./setup.sh build-image
 ```
 
-* Build the GCC toolchain:
+* Build the GCC toolchain (all targets):
 
 ```shell
 ./setup.sh build-toolchain
 ```
+
+After compilation, the toolchains for each architecture will be available in the `build` directory.
 
 * (Optional) Check the toolchain component versions:
 
 ```shell
 ./setup.sh version
 ```
-
-After compilation, the toolchains for each architecture will be available in the `build` directory.

@@ -11,6 +11,9 @@ TOOLCHAINS=(
   'riscv64-linux-gnu'
 )
 
+printf '| %-18s | %-6s | %-10s | %-8s | %-4s |\n' 'Target' 'GCC' 'C Library' 'Binutils' 'GDB'
+printf '|:-------------------|:-------|:-----------|:---------|:-----|\n'
+
 for toolchain in "${TOOLCHAINS[@]}"; do
   tar xf gcc-$toolchain.tar.gz
 
@@ -26,13 +29,8 @@ for toolchain in "${TOOLCHAINS[@]}"; do
   BINUTILS_VERSION=$($toolchain/bin/$toolchain-ld --version | head -n1 | grep -Po '[0-9.]+$')
   GDB_VERSION=$($toolchain/bin/$toolchain-gdb --version | head -n1 | grep -Po '[0-9.]+$')
 
-  printf '* %s:\n\n' $toolchain
-  printf '| %-9s | %-7s |\n' 'Component' 'Version'
-  printf '|:----------|:--------|\n'
-  printf '| %-9s | %-7s |\n' 'GCC' $GCC_VERSION
-  printf '| %-9s | %-7s |\n' $LIBC_NAME $LIBC_VERSION
-  printf '| %-9s | %-7s |\n' 'Binutils' $BINUTILS_VERSION
-  printf '| %-9s | %-7s |\n\n' 'GDB' $GDB_VERSION
+  printf '| %-18s | %-6s | %-10s | %-8s | %-4s |\n' \
+    $toolchain $GCC_VERSION "$LIBC_NAME $LIBC_VERSION" $BINUTILS_VERSION $GDB_VERSION
 
   rm -rf $toolchain
 done

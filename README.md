@@ -1,8 +1,11 @@
 # GCC Toolchain
 
-GCC toolchain targeting **older glibc versions** and **musl**, designed for building Linux binaries that run across a
-wide range of distributions. Intended for use inside a Docker container running **Ubuntu 26.04 or later**. This
-toolchain is built using [Crosstool-NG](https://github.com/crosstool-ng/crosstool-ng).
+[![GitHub Release](https://img.shields.io/github/v/release/prepkg/gcc-toolchain)](https://github.com/prepkg/gcc-toolchain/releases/latest)
+[![License](https://img.shields.io/github/license/prepkg/gcc-toolchain)](https://github.com/prepkg/gcc-toolchain/blob/master/LICENSE)
+
+GCC **cross-compiler** toolchain targeting **older glibc versions** and **musl**, designed for **cross-compilation** of
+portable Linux binaries across a wide range of distributions. Intended for use inside a Docker container running
+**Ubuntu 26.04 or later**. This toolchain is built using [Crosstool-NG](https://github.com/crosstool-ng/crosstool-ng).
 
 To get started, [download a precompiled toolchain](#precompiled-toolchains) or [build from source](#compilation).
 

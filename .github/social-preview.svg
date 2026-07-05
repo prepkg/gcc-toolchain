@@ -1,0 +1,58 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <circle cx="250" cy="320" r="220" fill="url(#glow)"/>
+
+  <!-- Double angle brackets: icon for C++ templates / cross-compilation -->
+  <polyline points="310,180 110,320 310,460" fill="none" stroke="url(#accent)" stroke-width="28" stroke-linejoin="miter" stroke-linecap="round"/>
+  <polyline points="395,180 195,320 395,460" fill="none" stroke="url(#accent)" stroke-width="28" stroke-linejoin="miter" stroke-linecap="round" opacity="0.4"/>
+
+  <text x="480" y="250" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="28" font-weight="600" letter-spacing="4" fill="#8b949e">PREPKG</text>
+
+  <text x="478" y="330" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace"
+        font-size="92" font-weight="800" fill="#f0f6fc">gcc-toolchain</text>
+
+  <text font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="30" fill="#8b949e">
+    <tspan x="480" y="392">GCC cross-compiler toolchain targeting</tspan>
+    <tspan x="480" y="432">older glibc versions and musl</tspan>
+  </text>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="600">
+    <g>
+      <rect x="480" y="480" width="140" height="56" rx="28" fill="#21262d" stroke="#30363d"/>
+      <text x="550" y="516" text-anchor="middle" fill="#e6edf3">x86_64</text>
+    </g>
+    <g>
+      <rect x="636" y="480" width="150" height="56" rx="28" fill="#21262d" stroke="#30363d"/>
+      <text x="711" y="516" text-anchor="middle" fill="#e6edf3">aarch64</text>
+    </g>
+    <g>
+      <rect x="802" y="480" width="110" height="56" rx="28" fill="#21262d" stroke="#30363d"/>
+      <text x="857" y="516" text-anchor="middle" fill="#e6edf3">arm</text>
+    </g>
+    <g>
+      <rect x="928" y="480" width="150" height="56" rx="28" fill="#21262d" stroke="#30363d"/>
+      <text x="1003" y="516" text-anchor="middle" fill="#e6edf3">riscv64</text>
+    </g>
+    <g>
+      <rect x="1094" y="480" width="116" height="56" rx="28" fill="#21262d" stroke="#30363d"/>
+      <text x="1152" y="516" text-anchor="middle" fill="#e6edf3">musl</text>
+    </g>
+  </g>
+</svg>

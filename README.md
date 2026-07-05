@@ -2,6 +2,7 @@
 
 [![GitHub Release](https://img.shields.io/github/v/release/prepkg/gcc-toolchain)](https://github.com/prepkg/gcc-toolchain/releases/latest)
 [![License](https://img.shields.io/github/license/prepkg/gcc-toolchain)](https://github.com/prepkg/gcc-toolchain/blob/master/LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/prepkg/gcc-toolchain/total)](https://github.com/prepkg/gcc-toolchain/releases)
 
 GCC **cross-compiler** toolchain targeting **older glibc versions** and **musl**, designed for **cross-compilation** of
 portable Linux binaries across a wide range of distributions. Intended for use inside a Docker container running

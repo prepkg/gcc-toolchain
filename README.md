@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/github/license/prepkg/gcc-toolchain)](https://github.com/prepkg/gcc-toolchain/blob/master/LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/prepkg/gcc-toolchain/total)](https://github.com/prepkg/gcc-toolchain/releases)
 
+> ⭐ If you find this repository useful, please consider giving it a star.
+
 GCC **cross-compiler** toolchain targeting **older glibc versions** and **musl**, designed for **cross-compilation** of
 portable Linux binaries across a wide range of distributions. Intended for use inside a Docker container running
 **Ubuntu 26.04 or later**. This toolchain is built using [Crosstool-NG](https://github.com/crosstool-ng/crosstool-ng).

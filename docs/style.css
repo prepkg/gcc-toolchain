@@ -83,6 +83,11 @@ code, pre {
     color: var(--text);
 }
 
+.star-count {
+    height: 16px;
+    vertical-align: middle;
+}
+
 main {
     max-width: 960px;
     margin: 0 auto;

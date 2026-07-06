@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCC cross-compiler toolchain</title>
+    <meta name="description"
+          content="GCC cross-compiler toolchain targeting older glibc versions and musl - just download and use it.">
+    <link rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+    <div class="nav-inner">
+        <a class="brand" href="https://github.com/prepkg/gcc-toolchain">
+            <svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true">
+                <defs>
+                    <linearGradient id="navIcon" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#f59e0b"/>
+                        <stop offset="100%" stop-color="#ef4444"/>
+                    </linearGradient>
+                </defs>
+                <polyline points="30,4 6,24 30,44" fill="none" stroke="url(#navIcon)" stroke-width="6"
+                          stroke-linejoin="miter" stroke-linecap="round"/>
+                <polyline points="42,4 18,24 42,44" fill="none" stroke="url(#navIcon)" stroke-width="6"
+                          stroke-linejoin="miter" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+            <span class="brand-name">prepkg/<strong>gcc-toolchain</strong></span>
+        </a>
+        <nav class="nav-links">
+            <a href="https://github.com/prepkg/gcc-toolchain">GitHub</a>
+            <a href="https://github.com/prepkg/gcc-toolchain/releases">Releases</a>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="hero">
+        <svg class="hero-icon" viewBox="0 0 300 300" width="96" height="96" aria-hidden="true">
+            <defs>
+                <linearGradient id="heroIcon" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#ef4444"/>
+                </linearGradient>
+            </defs>
+            <polyline points="190,30 10,150 190,270" fill="none" stroke="url(#heroIcon)" stroke-width="28"
+                      stroke-linejoin="miter" stroke-linecap="round"/>
+            <polyline points="260,30 80,150 260,270" fill="none" stroke="url(#heroIcon)" stroke-width="28"
+                      stroke-linejoin="miter" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <h1>gcc-toolchain</h1>
+        <p class="tagline">
+            🚀️ GCC cross-compiler toolchain targeting older glibc versions and musl - just download and use it.
+        </p>
+        <div class="cta">
+            <a class="btn btn-primary" href="#install">Get Started</a>
+            <a class="btn btn-secondary" href="https://github.com/prepkg/gcc-toolchain">View on GitHub</a>
+        </div>
+        <div class="badges">
+            <a href="https://github.com/prepkg/gcc-toolchain/releases/latest"><img
+                    src="https://img.shields.io/github/v/release/prepkg/gcc-toolchain" alt="GitHub Release"></a>
+            <a href="https://github.com/prepkg/gcc-toolchain/releases"><img
+                    src="https://img.shields.io/github/downloads/prepkg/gcc-toolchain/total" alt="Downloads"></a>
+            <a href="https://github.com/prepkg/gcc-toolchain/blob/master/LICENSE"><img
+                    src="https://img.shields.io/github/license/prepkg/gcc-toolchain" alt="License"></a>
+            <a href="https://github.com/prepkg/gcc-toolchain/blob/master/CHANGELOG.md"><img
+                    src="https://img.shields.io/badge/changelog-Keep%20a%20Changelog-%23E05735" alt="Changelog"></a>
+        </div>
+    </section>
+
+    <section id="install" class="install">
+        <h2>Install</h2>
+
+        <div class="tabs" role="tablist">
+            <button class="tab active" data-os="linux" role="tab" aria-selected="true">Linux</button>
+        </div>
+
+        <div class="panel active" data-panel="linux">
+            <div class="arch-toggle" id="linux-targets">
+                <button class="arch-btn active" data-value="x86_64-linux-gnu">x86_64-linux-gnu</button>
+                <button class="arch-btn" data-value="x86_64-linux-musl">x86_64-linux-musl</button>
+                <button class="arch-btn" data-value="aarch64-linux-gnu">aarch64-linux-gnu</button>
+                <button class="arch-btn" data-value="aarch64-linux-musl">aarch64-linux-musl</button>
+                <button class="arch-btn" data-value="arm-linux-gnueabi">arm-linux-gnueabi</button>
+                <button class="arch-btn" data-value="riscv64-linux-gnu">riscv64-linux-gnu</button>
+            </div>
+            <p class="hint">The command installs toolchain to <code>/opt</code>. Replace it with a different path if
+                needed.</p>
+            <div class="code-block">
+                <code id="linux-cmd">curl -sSL https://github.com/prepkg/gcc-toolchain/releases/latest/download/gcc-x86_64-linux-gnu.tar.gz \
+  | sudo tar xz -C /opt</code>
+                <button class="copy-btn" data-target="linux-cmd">Copy</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="why">
+        <h2>Why?</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Modern alternative to old distros</h3>
+                <p>The usual method for producing portable Linux binaries is to compile them on an outdated distribution
+                    (e.g., CentOS 7). This toolchain lets you build on a modern system while targeting older
+                    environments.</p>
+            </div>
+            <div class="card">
+                <h3>glibc compatibility</h3>
+                <p>The toolchain is configured to target an older glibc, ensuring compatibility and preventing errors
+                    like: <code>/lib64/libc.so.6: version GLIBC_2.XX not found</code>.</p>
+            </div>
+            <div class="card">
+                <h3>musl for fully static binaries</h3>
+                <p>The toolchain provides musl targets that produce fully static binaries with no
+                    dynamic library dependencies, maximizing portability across any Linux system.</p>
+            </div>
+            <div class="card">
+                <h3>No build required</h3>
+                <p>The toolchain is ready to download and use immediately. Building GCC from source takes hours;
+                    this skips that entirely.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="supported">
+        <h2>Supported Toolchains</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Target</th>
+                <th>GCC</th>
+                <th>C Library</th>
+                <th>Binutils</th>
+                <th>GDB</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code>x86_64-linux-gnu</code></td>
+                <td>16.1.0</td>
+                <td>glibc 2.17</td>
+                <td>2.46.1</td>
+                <td>17.2</td>
+            </tr>
+            <tr>
+                <td><code>x86_64-linux-musl</code></td>
+                <td>16.1.0</td>
+                <td>musl 1.2.6</td>
+                <td>2.46.1</td>
+                <td>17.2</td>
+            </tr>
+            <tr>
+                <td><code>aarch64-linux-gnu</code></td>
+                <td>16.1.0</td>
+                <td>glibc 2.26</td>
+                <td>2.46.1</td>
+                <td>17.2</td>
+            </tr>
+            <tr>
+                <td><code>aarch64-linux-musl</code></td>
+                <td>16.1.0</td>
+                <td>musl 1.2.6</td>
+                <td>2.46.1</td>
+                <td>17.2</td>
+            </tr>
+            <tr>
+                <td><code>arm-linux-gnueabi</code></td>
+                <td>16.1.0</td>
+                <td>glibc 2.26</td>
+                <td>2.46.1</td>
+                <td>17.2</td>
+            </tr>
+            <tr>
+                <td><code>riscv64-linux-gnu</code></td>
+                <td>16.1.0</td>
+                <td>glibc 2.30</td>
+                <td>2.46.1</td>
+                <td>17.2</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<footer>
+    <p>Built using <a href="https://github.com/crosstool-ng/crosstool-ng">Crosstool-NG</a>. Released under the MIT
+        License.</p>
+    <p><a href="https://github.com/prepkg/gcc-toolchain">github.com/prepkg/gcc-toolchain</a></p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -5,11 +5,13 @@
 [![Downloads](https://img.shields.io/github/downloads/prepkg/gcc-toolchain/total)](https://github.com/prepkg/gcc-toolchain/releases)
 [![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-%23E05735)](CHANGELOG.md)
 
+> 🚀️ GCC cross-compiler toolchain targeting older glibc versions and musl - just download and use it.
+
 > ⭐ If you find this repository useful, please consider giving it a star.
 
-GCC **cross-compiler** toolchain targeting **older glibc versions** and **musl**, designed for **cross-compilation** of
-portable Linux binaries across a wide range of distributions. Intended for use inside a Docker container running
-**Ubuntu 26.04 or later**. This toolchain is built using [Crosstool-NG](https://github.com/crosstool-ng/crosstool-ng).
+The toolchain designed for **cross-compilation** of portable Linux binaries across a wide range of distributions.
+Intended for use inside a Docker container running **Ubuntu 26.04 or later**. This toolchain is built
+using [Crosstool-NG](https://github.com/crosstool-ng/crosstool-ng).
 
 To get started, [download a precompiled toolchain](#precompiled-toolchains) or [build from source](#compilation).
 
@@ -20,10 +22,10 @@ To get started, [download a precompiled toolchain](#precompiled-toolchains) or [
   environments.
 * **glibc compatibility.** The toolchain is configured to target an older glibc, ensuring compatibility and preventing
   errors like: `/lib64/libc.so.6: version GLIBC_2.XX not found`.
-* **musl for fully static binaries.** Produce binaries with no dynamic library dependencies at all, maximizing
-  portability across any Linux system regardless of installed libraries.
-* **No build required.** Precompiled toolchain is ready to download and use immediately. Building GCC from source
-  takes hours; this skips that entirely.
+* **musl for fully static binaries.** The toolchain provides musl targets that produce fully static binaries with no
+  dynamic library dependencies, maximizing portability across any Linux system.
+* **No build required.** The toolchain is ready to download and use immediately. Building GCC from source takes hours;
+  this skips that entirely.
 
 ## Supported Toolchains
 

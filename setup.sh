@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eo pipefail
 
 if [[ ! $1 =~ ^(build-image|build-toolchain|version)$ ]]; then
   echo 'Available arguments: build-image, build-toolchain, version'

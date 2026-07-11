@@ -1,15 +1,16 @@
 #!/bin/bash
+set -eo pipefail
 
 cd /tmp
 git clone https://github.com/crosstool-ng/crosstool-ng
 cd crosstool-ng
-git checkout 203a48c
+git checkout 27cd838
 
 ./bootstrap
 ./configure --enable-local
 make -j$(nproc)
 
-mkdir -p /app/build
+mkdir -p /app/build /tmp/tarballs
 
 TOOLCHAINS=(
   'x86_64-linux-gnu'

@@ -29,14 +29,14 @@ To get started, [download a precompiled toolchain](#precompiled-toolchains) or [
 
 ## Supported Toolchains
 
-| Target             | GCC    | C Library  | Binutils | GDB  |
-|:-------------------|:-------|:-----------|:---------|:-----|
-| x86_64-linux-gnu   | 16.1.0 | glibc 2.17 | 2.46.1   | 17.2 |
-| x86_64-linux-musl  | 16.1.0 | musl 1.2.6 | 2.46.1   | 17.2 |
-| aarch64-linux-gnu  | 16.1.0 | glibc 2.26 | 2.46.1   | 17.2 |
-| aarch64-linux-musl | 16.1.0 | musl 1.2.6 | 2.46.1   | 17.2 |
-| arm-linux-gnueabi  | 16.1.0 | glibc 2.26 | 2.46.1   | 17.2 |
-| riscv64-linux-gnu  | 16.1.0 | glibc 2.30 | 2.46.1   | 17.2 |
+| Target             | GCC    | C Library  | Binutils | GDB  | OpenMP |
+|:-------------------|:-------|:-----------|:---------|:-----|:-------|
+| x86_64-linux-gnu   | 16.1.0 | glibc 2.17 | 2.46.1   | 17.2 | 202111 |
+| x86_64-linux-musl  | 16.1.0 | musl 1.2.6 | 2.46.1   | 17.2 | 202111 |
+| aarch64-linux-gnu  | 16.1.0 | glibc 2.26 | 2.46.1   | 17.2 | 202111 |
+| aarch64-linux-musl | 16.1.0 | musl 1.2.6 | 2.46.1   | 17.2 | 202111 |
+| arm-linux-gnueabi  | 16.1.0 | glibc 2.26 | 2.46.1   | 17.2 | 202111 |
+| riscv64-linux-gnu  | 16.1.0 | glibc 2.30 | 2.46.1   | 17.2 | 202111 |
 
 ## Precompiled Toolchains
 

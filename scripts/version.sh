@@ -11,8 +11,8 @@ TOOLCHAINS=(
   'riscv64-linux-gnu'
 )
 
-printf '| %-18s | %-6s | %-10s | %-8s | %-4s |\n' 'Target' 'GCC' 'C Library' 'Binutils' 'GDB'
-printf '|:-------------------|:-------|:-----------|:---------|:-----|\n'
+printf '| %-18s | %-6s | %-10s | %-8s | %-4s | %-6s |\n' 'Target' 'GCC' 'C Library' 'Binutils' 'GDB' 'OpenMP'
+printf '|:-------------------|:-------|:-----------|:---------|:-----|:-------|\n'
 
 for toolchain in "${TOOLCHAINS[@]}"; do
   tar xf gcc-$toolchain.tar.gz
@@ -28,9 +28,10 @@ for toolchain in "${TOOLCHAINS[@]}"; do
   fi
   BINUTILS_VERSION=$($toolchain/bin/$toolchain-ld --version | head -n1 | grep -Po '[0-9.]+$')
   GDB_VERSION=$($toolchain/bin/$toolchain-gdb --version | head -n1 | grep -Po '[0-9.]+$')
+  OPENMP_VERSION=$($GCC -fopenmp -dM -E - < /dev/null | grep -Po '_OPENMP \K[0-9]+$')
 
-  printf '| %-18s | %-6s | %-10s | %-8s | %-4s |\n' \
-    $toolchain $GCC_VERSION "$LIBC_NAME $LIBC_VERSION" $BINUTILS_VERSION $GDB_VERSION
+  printf '| %-18s | %-6s | %-10s | %-8s | %-4s | %-6s |\n' \
+    $toolchain $GCC_VERSION "$LIBC_NAME $LIBC_VERSION" $BINUTILS_VERSION $GDB_VERSION $OPENMP_VERSION
 
   rm -rf $toolchain
 done
